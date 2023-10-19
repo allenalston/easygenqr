@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="../dist/easygenqr.js"></script>
+        <script>
+            const { encodeData, generateSVGQRCode } = easygenqr;
+            document.body.style =
+                "background-color: #eee; display: flex; align-items: center;  flex-wrap:wrap; gap:10px; padding: 10px;";
+
+            function init(options) {
+                const qr = encodeData({
+                    text: "https://baidu.com",
+                    errorCorrectionLevel: 3
+                });
+                const svg = generateSVGQRCode(qr, options);
+
+                const div0 = document.createElement("div");
+
+                const div = document.createElement("div");
+                div.style.width = "300px";
+                div.style.height = "300px";
+                div.style.backgroundColor = "white";
+                div.style.borderRadius = "10px";
+                div.innerHTML = svg;
+
+                const p = document.createElement("p");
+                p.innerText =
+                    "MarkMode: " +
+                    JSON.stringify(options.markerMode) +
+                    "  DotMode: " +
+                    JSON.stringify(options.dotMode);
+                p.style.paddingTop = "5px";
+                p.style.paddingBottom = "10px";
+                p.style.fontSize = "16px";
+                p.style.color = "#666";
+
+                div0.appendChild(div);
+                div0.appendChild(p);
+                document.body.appendChild(div0);
+            }
+            init({
+                bgColor: "#fd8181",
+                dotColor: "#abc107",
+                dotMode: 0,
+                markerColor: "#c16707",
+                markerMode: 0
+            });
+            init({
+                bgColor: "#fd8181",
+                dotColor: "#abc107",
+                dotMode: 0,
+                markerColor: "#c16707",
+                markerMode: 1
+            });
+            init({
+                bgColor: "#fd8181",
+                dotColor: "#abc107",
+                dotMode: 0,
+                markerColor: "#c16707",
+                markerMode: 2
+            });
+            init({
+                bgColor: "#fd8181",
+                dotColor: "#abc107",
+                dotMode: 0,
+                markerColor: "#c16707",
+                markerMode: 3
+            });
+            init({
+                bgColor: "#fd8181",
+                dotColor: "#abc107",
+                dotMode: 0,
+                markerColor: "#c16707",
+                markerMode: 4
+            });
+            init({
+                bgColor: "#fd8181",
+                dotColor: "black",
+                dotMode: 1,
+                markerColor: "black",
+                markerMode: 0
+            });
+        </script>
+    </body>
+</html>
