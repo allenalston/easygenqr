@@ -14,6 +14,12 @@ export enum MarkerModes {
     MarkerMode4 = 4 // border circle and center square
 }
 
+// dot modes 
+export enum DotModes {
+    Square = 0,
+    Circle = 1
+}
+
 // qr data options
 export interface QRDataOptions {
     text: string; // qr code text
@@ -22,9 +28,9 @@ export interface QRDataOptions {
 
 // qr code options for render svg
 export interface QRCodeOptions {
-    bgColor: string; // qr code background color
-    dotColor: string; // qr code dot color
-    markerColor: string; // marker color
-    dotMode: number; // dot style 0=>SQUARE 1=>CIRCLE
-    markerMode: MarkerModes; // marker style
+    bgColor?: string; // qr code background color
+    dotColor?: string; // qr code dot color
+    markerColor?: string; // marker color
+    dotMode?: DotModes; // dot style 0=>SQUARE 1=>CIRCLE
+    markerMode?: MarkerModes; // marker style
 }
