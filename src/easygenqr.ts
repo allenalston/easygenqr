@@ -11,7 +11,13 @@ const QRC = qrcodegen.QrCode;
 export const encodeData = ({
     text,
     errorCorrectionLevel = 3
-}: QRDataOptions) => {
+}: QRDataOptions): qrcodegen.QrCode => {
+    if (text === "" || text === undefined || text === null)
+        throw new Error("Text must be provided");
+
+    if (errorCorrectionLevel < 0 || errorCorrectionLevel > 3)
+        throw new Error("Error correction level must be between 0 and 3");
+
     const eccKey = ErrorCorrectLevel[
         errorCorrectionLevel
     ] as keyof typeof ErrorCorrectLevel;
