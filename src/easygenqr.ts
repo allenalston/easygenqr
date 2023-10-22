@@ -16,7 +16,7 @@ export const encodeData = ({
         errorCorrectionLevel
     ] as keyof typeof ErrorCorrectLevel;
 
-    return QRC.encodeText(text, QRC.Ecc[eccKey]);
+    return QRC.encodeText(text, qrcodegen.Ecc[eccKey]);
 };
 
 export const generateSVGQRCode = (

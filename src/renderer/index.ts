@@ -25,8 +25,8 @@ export const renderMainSvgContent = (
         renderMarker2,
         renderMarker3,
         renderMarker4
-    ][options.markerMode];
-    const renderDotsFunc = [renderDotsBase, renderDotsMode1][options.dotMode];
+    ][options.markerMode || 0]; // add a check to make sure options.markerMode is defined
+    const renderDotsFunc = [renderDotsBase, renderDotsMode1][options.dotMode || 0]; // add a check to make sure options.dotMode is defined
 
     const markersGroup = renderMarkerFunc(qr, options);
     const dotsGroup = renderDotsFunc(qr, options);

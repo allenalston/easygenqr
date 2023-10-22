@@ -1,12 +1,10 @@
 module.exports = {
     env: {
         browser: true,
-        es2025: true
+        node: true,
+        es2020: true
     },
-    extends: [
-        "eslint:recommended",
-        "prettier"
-    ],
+    extends: ["eslint:recommended", "prettier"],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: "latest",
@@ -14,7 +12,7 @@ module.exports = {
     },
     plugins: ["@typescript-eslint"],
     rules: {
-        indent: ["error", "tab"],
+        indent: "off",
         "linebreak-style": ["error", "unix"],
         quotes: ["error", "double"],
         semi: ["error", "always"]

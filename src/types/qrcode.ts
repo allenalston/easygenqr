@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export enum ErrorCorrectLevel {
     LOW = 0,
     MEDIUM = 1,
@@ -14,7 +15,7 @@ export enum MarkerModes {
     MarkerMode4 = 4 // border circle and center square
 }
 
-// dot modes 
+// dot modes
 export enum DotModes {
     Square = 0,
     Circle = 1
