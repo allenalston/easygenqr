@@ -27,7 +27,7 @@ $ pnpm add easygenqr
     text: "Hello World!",
     errorCorrectionLevel: 3
  });
- 
+
  const svg = generateSVGQRCode(qr,{
      bgColor: "#ffffff",
      dotColor: "#000000",
@@ -35,7 +35,7 @@ $ pnpm add easygenqr
      markerColor: "#000000",
      markerMode: 0
  });
- 
+
  // add to html
  const div = document.createElement("div");
  div.style.width = "300px";
@@ -103,9 +103,6 @@ watch(
     v-html="qrSVGString"
   ></div>
 </template>
-
-
-
 ```
 
 ### React.js demo
@@ -158,6 +155,23 @@ QRCodeOptions {
     markerMode?: MarkerModes; // marker style
 }
 ```
+
+`DotModes`
+
+| Value | Description |
+| ----- | ----------- |
+| 0     | Square      |
+| 1     | Circle      |
+
+`MarkerModes`
+
+| Value | Description                                     |
+| ----- | ----------------------------------------------- |
+| 0     | Base: border square and center square           |
+| 1     | border rounded corner and center rounded corner |
+| 2     | border circle and center circle                 |
+| 3     | border square and center circle                 |
+| 4     | border circle and center square                 |
 
 ## Developer
 
