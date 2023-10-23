@@ -1,9 +1,14 @@
 {
     "name": "easygenqr",
-    "version": "1.2.2",
+    "version": "1.2.4",
     "description": "This is a library for generating QR codes.",
     "author": "tianqi",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/allenalston/easygenqr"
+    },
+    "keywords": ["qrcode", "qr", "svg"],
     "main": "dist/easygenqr.js",
     "module": "dist/easygenqr.esm.js",
     "types": "dist/easygenqr.d.ts",
