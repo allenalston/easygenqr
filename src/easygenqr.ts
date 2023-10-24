@@ -21,8 +21,9 @@ export const encodeData = ({
     const eccKey = ErrorCorrectLevel[
         errorCorrectionLevel
     ] as keyof typeof ErrorCorrectLevel;
+    const segs = qrcodegen.QrSegment.makeSegments(text);
 
-    return QRC.encodeText(text, qrcodegen.Ecc[eccKey]);
+    return QRC.encodeSegments(segs, qrcodegen.Ecc[eccKey], 1, 40, -1, false);
 };
 
 export const generateSVGQRCode = (
