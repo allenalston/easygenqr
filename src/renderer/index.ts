@@ -7,7 +7,12 @@ import {
     renderMarker3,
     renderMarker4
 } from "./renderMarkers";
-import { renderDotsBase, renderDotsMode1 } from "./renderDots";
+import {
+    renderDotsBase,
+    renderDotsMode1,
+    renderDotsMode2,
+    renderDotsMode3
+} from "./renderDots";
 
 export const getViewBox = (size: number) => {
     return `${-size / 10} ${-size / 10} ${size + (size / 10) * 2} ${
@@ -30,7 +35,12 @@ export const renderMainSvgContent = (
         renderMarker3,
         renderMarker4
     ];
-    const dotModes = [renderDotsBase, renderDotsMode1];
+    const dotModes = [
+        renderDotsBase,
+        renderDotsMode1,
+        renderDotsMode2,
+        renderDotsMode3
+    ];
 
     if (
         typeof markerMode !== "number" ||

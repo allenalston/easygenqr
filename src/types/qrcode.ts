@@ -18,7 +18,9 @@ export enum MarkerModes {
 // dot modes
 export enum DotModes {
     Square = 0,
-    Circle = 1
+    Circle = 1,
+    Rounded = 2,
+    LineCircle = 3
 }
 
 // qr data options
@@ -32,7 +34,7 @@ export interface QRCodeOptions {
     bgColor?: string; // qr code background color
     dotColor?: string; // qr code dot color
     markerColor?: string; // marker color
-    dotMode?: DotModes; // dot style 0=>SQUARE 1=>CIRCLE
+    dotMode?: DotModes; // dot style 0=>SQUARE 1=>CIRCLE 2=>ROUNDED
     markerMode?: MarkerModes; // marker style
     logo?: string; // logo url
     withLogoBg?: boolean; // logo background is transparent or not

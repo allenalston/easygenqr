@@ -8,7 +8,7 @@ This is a library for generating QR codes. Use encodeData to implement data pars
 
 - add brand logo  
 
-<img title="" src="https://i.imgur.com/KgKusWN.png" alt="">
+<img title="" src="https://i.imgur.com/rZ3N3Fg.png" alt="">
 
 ## Installation
 
@@ -166,6 +166,8 @@ QRCodeOptions {
 | ----- | ----------- |
 | 0     | Square      |
 | 1     | Circle      |
+| 2     | Rounded     |
+| 3     | LineCircle  |
 
 `MarkerModes`
 

@@ -58,6 +58,9 @@ export const generateLogoAttrs = (qr: qrcodegen.QrCode) => {
     // if (hh < 0.2) {
     //     hh = 0.2;
     // }
+
+    // TODO - set logo size
+
     const hw = 0.25;
     const hh = 0.25;
 
@@ -72,4 +75,26 @@ export const generateLogoAttrs = (qr: qrcodegen.QrCode) => {
         logoWidthInQR,
         logoHeightInQR
     };
+};
+
+export const isLogoBackground = (
+    qr: qrcodegen.QrCode,
+    x: number,
+    y: number,
+    withLogoBg: boolean
+) => {
+    const { logoWidthInQR, logoHeightInQR, logoX, logoY } =
+        generateLogoAttrs(qr);
+
+    if (
+        withLogoBg &&
+        x >= logoX &&
+        x <= logoX + logoWidthInQR - 1 &&
+        y >= logoY &&
+        y <= logoY + logoHeightInQR - 1
+    ) {
+        return true;
+    }
+
+    return false;
 };
