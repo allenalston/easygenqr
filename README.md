@@ -8,7 +8,7 @@ This is a library for generating QR codes. Use encodeData to implement data pars
 
 - add brand logo  
 
-<img title="" src="https://i.imgur.com/K5UzU1Y.png" alt="">
+<img title="" src="https://i.imgur.com/KgKusWN.png" alt="">
 
 ## Installation
 
@@ -187,8 +187,6 @@ Support Base64 or picture url.
 | -------------- | ------------------------------- |
 | true (default) | logo background is white.       |
 | false          | logo background is transparent. |
-
-
 
 ## Developer
 
