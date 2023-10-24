@@ -40,3 +40,36 @@ export const getMarkerPoints = (qr: qrcodegen.QrCode) => {
         l
     };
 };
+
+export const generateLogoAttrs = (qr: qrcodegen.QrCode) => {
+    // const logoWidth = 120;
+    // const logoHeight = 120;
+    // let hw = logoWidth / 300;
+    // let hh = logoHeight / 300;
+    // if (hw > 0.3) {
+    //     hw = 0.3;
+    // }
+    // if (hw < 0.2) {
+    //     hw = 0.2;
+    // }
+    // if (hh > 0.3) {
+    //     hh = 0.3;
+    // }
+    // if (hh < 0.2) {
+    //     hh = 0.2;
+    // }
+    const hw = 0.25;
+    const hh = 0.25;
+
+    const logoWidthInQR = Math.floor(hw * qr.size);
+    const logoHeightInQR = Math.floor(hh * qr.size);
+    const logoX = Math.floor((qr.size - logoWidthInQR) / 2);
+    const logoY = Math.floor((qr.size - logoHeightInQR) / 2);
+
+    return {
+        logoX,
+        logoY,
+        logoWidthInQR,
+        logoHeightInQR
+    };
+};

@@ -6,7 +6,9 @@ This is a library for generating QR codes. Use encodeData to implement data pars
 
 - custom styles
 
-<img title="" src="https://i.imgur.com/eFKXqgs.jpeg" alt="">
+- add brand logo  
+
+<img title="" src="https://i.imgur.com/K5UzU1Y.png" alt="">
 
 ## Installation
 
@@ -112,7 +114,7 @@ import { encodeData, generateSVGQRCode } from 'easygenqr'
 
 export default function QRCode(){
   const qr = encodeData({
-    text: props.text,
+    text: "Hello easygenqr!",
     errorCorrectionLevel: 1,
   });
 
@@ -139,10 +141,10 @@ export default function QRCode(){
 
 #### generateSVGQRCode
 
-| Parameters | Type             | Default                                                                                                                                                                                    | Description                                                                                                                           |
-| ---------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| qr         | qrcodegen.QrCode |                                                                                                                                                                                            | The data returned by encodeData()<br/>**refrence**: [QR Code generator library](https://www.nayuki.io/page/qr-code-generator-library) |
-| options    | QRCodeOptions    | {<br/>            bgColor: "#ffffff",<br/>            dotColor: "#000000",<br/>            markerColor: "#000000",<br/>            dotMode: 0,<br/>            markerMode: 0<br/>        } | qr code options for render svg                                                                                                        |
+| Parameters | Type             | Default                                                                                                                                                                                           | Description                                                                                                                           |
+| ---------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| qr         | qrcodegen.QrCode |                                                                                                                                                                                                   | The data returned by encodeData()<br/>**refrence**: [QR Code generator library](https://www.nayuki.io/page/qr-code-generator-library) |
+| options    | QRCodeOptions    | {<br/>            bgColor: "#ffffff",<br/>            dotColor: "#000000",<br/>            markerColor: "#000000",<br/>            dotMode: 0,<br/>            markerMode: 0,<br/>withLogo:true } | qr code options for render svg                                                                                                        |
 
 `QRCodeOptions`:
 
@@ -153,6 +155,8 @@ QRCodeOptions {
     markerColor?: string; // marker color
     dotMode?: DotModes; // dot style 0=>SQUARE 1=>CIRCLE
     markerMode?: MarkerModes; // marker style
+    logo?: string; // logo url
+    withLogoBg?: boolean; // logo background is transparent or not
 }
 ```
 
@@ -172,6 +176,19 @@ QRCodeOptions {
 | 2     | border circle and center circle                 |
 | 3     | border square and center circle                 |
 | 4     | border circle and center square                 |
+
+`logo`
+
+Support Base64 or picture url.
+
+`withLogoBg`
+
+| Value          | Description                     |
+| -------------- | ------------------------------- |
+| true (default) | logo background is white.       |
+| false          | logo background is transparent. |
+
+
 
 ## Developer
 

@@ -9,13 +9,23 @@
         <script src="../dist/easygenqr.js"></script>
         <script>
             const { encodeData, generateSVGQRCode } = easygenqr;
+            const demoLogo = `<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="46" height="46" rx="10" fill="black"/>
+<path d="M25.6586 11.1908L25.6586 18.0537C25.6586 19.3165 24.6338 20.3414 23.371 20.3414C22.1082 20.3414 21.0833 19.3165 21.0833 18.0537L21.0833 13.4785L18.7957 13.4785C17.5329 13.4785 16.5081 12.4536 16.5081 11.1908C16.5081 9.92805 17.5329 8.90318 18.7957 8.90318L23.371 8.90319C24.6338 8.90319 25.6586 9.92805 25.6586 11.1908Z" fill="white"/>
+<path d="M9.64517 34.0672L9.64517 11.1908C9.64517 9.92805 10.67 8.90318 11.9328 8.90318C13.1956 8.90318 14.2204 9.92805 14.2204 11.1908L14.2204 34.0672C14.2204 35.3299 13.1956 36.3548 11.9328 36.3548C10.67 36.3548 9.64517 35.3299 9.64517 34.0672Z" fill="white"/>
+<path d="M32.5215 15.7661L34.8092 15.7661C36.0719 15.7661 37.0968 16.791 37.0968 18.0537C37.0968 19.3165 36.0719 20.3414 34.8092 20.3414L30.2339 20.3414C28.9711 20.3414 27.9463 19.3165 27.9463 18.0537L27.9463 11.1908C27.9463 9.92806 28.9711 8.9032 30.2339 8.9032C31.4967 8.9032 32.5215 9.92806 32.5215 11.1908L32.5215 15.7661Z" fill="white"/>
+<path d="M18.7957 31.7795L23.371 31.7795C24.6338 31.7795 25.6586 32.8044 25.6586 34.0672C25.6586 35.3299 24.6338 36.3548 23.371 36.3548L18.7957 36.3548C17.5329 36.3548 16.5081 35.3299 16.5081 34.0672C16.5081 32.8044 17.5329 31.7795 18.7957 31.7795Z" fill="white"/>
+<path d="M34.8092 36.3548L30.2339 36.3548C28.9711 36.3548 27.9463 35.3299 27.9463 34.0672C27.9463 32.8044 28.9711 31.7795 30.2339 31.7795L32.5215 31.7795L32.5215 27.2043L30.2339 27.2043C28.9711 27.2043 27.9463 26.1794 27.9463 24.9166C27.9463 23.6539 28.9711 22.629 30.2339 22.629L34.8092 22.629C36.0719 22.629 37.0968 23.6539 37.0968 24.9166L37.0968 34.0672C37.0968 35.3299 36.0719 36.3548 34.8092 36.3548Z" fill="white"/>
+<path d="M21.0834 24.9166L23.371 24.9166C24.6338 24.9166 25.6586 25.9415 25.6586 27.2042C25.6586 28.467 24.6338 29.4919 23.371 29.4919L18.7957 29.4919C17.5329 29.4919 16.5081 28.467 16.5081 27.2042L16.5081 22.629C16.5081 21.3662 17.5329 20.3413 18.7957 20.3413C20.0585 20.3413 21.0834 21.3662 21.0834 22.629L21.0834 24.9166Z" fill="#6528F7"/>
+</svg>
+`;
             document.body.style =
-                "background-color: #eee; display: flex; align-items: center;  flex-wrap:wrap; gap:10px; padding: 10px;";
+                "background-color: #eee; display: flex; flex-wrap:wrap; gap:10px; padding: 10px;";
 
             function init(options) {
                 const qr = encodeData({
-                    text: "Hello Easygenqr!",
-                    errorCorrectionLevel: 1
+                    text: "https://github.com/maicFir/nice_utils/blob/master/package.json",
+                    errorCorrectionLevel: 2
                 });
                 const svg = generateSVGQRCode(qr, options);
 
@@ -84,6 +94,33 @@
                 dotMode: 1,
                 markerColor: "black",
                 markerMode: 1
+            });
+            init({
+                bgColor: "#fff",
+                dotColor: "#3311DB",
+                dotMode: 0,
+                markerColor: "#00DCC3",
+                markerMode: 3,
+                logo: "data:image/svg+xml," + encodeURIComponent(demoLogo),
+                withLogoBg: true
+            });
+            init({
+                bgColor: "#fff",
+                dotColor: "#3311DB",
+                dotMode: 0,
+                markerColor: "#00DCC3",
+                markerMode: 1,
+                logo: "data:image/svg+xml," + encodeURIComponent(demoLogo),
+                withLogoBg: false
+            });
+            init({
+                bgColor: "#fff",
+                dotColor: "black",
+                dotMode: 1,
+                markerColor: "black",
+                markerMode: 1,
+                logo: "data:image/svg+xml," + encodeURIComponent(demoLogo),
+                withLogoBg: true
             });
         </script>
     </body>

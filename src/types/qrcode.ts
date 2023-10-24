@@ -34,4 +34,6 @@ export interface QRCodeOptions {
     markerColor?: string; // marker color
     dotMode?: DotModes; // dot style 0=>SQUARE 1=>CIRCLE
     markerMode?: MarkerModes; // marker style
+    logo?: string; // logo url
+    withLogoBg?: boolean; // logo background is transparent or not
 }

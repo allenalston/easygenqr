@@ -35,7 +35,8 @@ export const generateSVGQRCode = (
             dotColor: "#000000",
             markerColor: "#000000",
             dotMode: 0,
-            markerMode: 0
+            markerMode: 0,
+            withLogoBg: true
         },
         options
     );
