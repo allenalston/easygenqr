@@ -42,7 +42,7 @@ function drawPath(points: number[][], l: number) {
                             c${0},${r2 * k} ${r2 * (1 - k)},${r2} ${r2},${r2}
                             v0
                             c${r2 * k},${0} ${r2},${-r2 * (1 - k)} ${r2},${-r2}
-                            v0z"
+                            v0z
                     "/>
                 </g>`;
 

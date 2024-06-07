@@ -147,7 +147,7 @@ const drawLineCircleDot = (
     }
 
     if (!leftNeighbor && !rightNeighbor) {
-        return `<rect x="${x}" y="${y}" x="${x}" y="${y}" width="${
+        return `<rect x="${x}" y="${y}" width="${
             1 - margin
         }" height="${1 - margin}" rx="1" ry="1" transform="translate(0, ${
             margin / 2

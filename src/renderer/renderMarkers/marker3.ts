@@ -24,7 +24,7 @@ function drawPath(points: number[][], l: number) {
 
     let inner = `<g><circle r="${l / 2 - 2}" cx="${xMin + l / 2}" cy="${
         yMin + l / 2
-    }"></rect></g>`;
+    }" /></g>`;
 
     return outer + inner;
 }
