@@ -1,6 +1,6 @@
 {
     "name": "easygenqr",
-    "version": "1.2.8",
+    "version": "1.2.9",
     "description": "This is a library for generating QR codes.",
     "author": "tianqi",
     "license": "MIT",
